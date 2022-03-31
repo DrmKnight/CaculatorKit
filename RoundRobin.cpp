@@ -12,38 +12,31 @@ int Select021(), Select022();
 int SampleFunction();
 
 int main() {
-	for (;;) {
-		system("cls");
-		printf("Enter/Quit\n");
-		char option;
-		cin.get(option);
-		if (option == 'Q')
-			break;
-		else if (option == '\n')
-			for (;;)
-				if (Select000() == 1)
-					break;
-		else continue;
-	}
+	system("cls");
+	printf("任意键继续或Q退出\n");
+	if(getchar() == 'Q')
+		return 0;
+	Select000();
 	return 0;
 }
 
 int Select000() {
 	for (;;) {
 		system("cls");
-		printf("1,2,0\n");
+		printf("001,002\n");
 		int option;
 		cin >> option;
-		if (option == 0)
-			return 1;
-		else if (option == 1)
-			for (;;)
+		if (option == 1) {
+			for (;;) {
 				if (Select001() == 1)
 					break;
+			}
+		}
 		else if (option == 2)
-			for (;;)
-				if (Select002() == 2)
+			for (;;) {
+				if (Select002() == 1)
 					break;
+			}
 		else continue;
 	}
 	return -1;
@@ -52,20 +45,24 @@ int Select000() {
 int Select001() {
 	for (;;) {
 		system("cls");
-		printf("1,2,0\n");
+		printf("011,012,0\n");
 		int option;
 		cin >> option;
 		if (option == 0)
 			return 1;
-		else if (option == 1)
-			for (;;)
+		else if (option == 1) {
+			for (;;) {
 				if (Select011() == 1)
 					break;
-				else if (option == 2)
-					for (;;)
-						if (Select012() == 2)
-							break;
-						else continue;
+			}
+		}
+		else if (option == 2) {
+			for (;;) {
+				if (Select012() == 1)
+					break;
+			}
+		}
+		else continue;
 	}
 	return -1;
 }
@@ -73,20 +70,24 @@ int Select001() {
 int Select002() {
 	for (;;) {
 		system("cls");
-		printf("1,2,0\n");
+		printf("021,022,0\n");
 		int option;
 		cin >> option;
 		if (option == 0)
 			return 1;
-		else if (option == 1)
-			for (;;)
+		else if (option == 1) {
+			for (;;) {
 				if (Select022() == 1)
 					break;
-				else if (option == 2)
-					for (;;)
-						if (Select022() == 2)
-							break;
-						else continue;
+			}
+		}
+		else if (option == 2) {
+			for (;;) {
+				if (Select022() == 1)
+					break;
+			}
+		}
+		else continue;
 	}
 	return -1;
 }
@@ -94,20 +95,24 @@ int Select002() {
 int Select011() {
 	for (;;) {
 		system("cls");
-		printf("1,2,0\n");
+		printf("111,112,0\n");
 		int option;
 		cin >> option;
 		if (option == 0)
 			return 1;
-		else if (option == 1)
-			for (;;)
+		else if (option == 1) {
+			for (;;) {
 				if (SampleFunction() == 1)
 					break;
-				else if (option == 2)
-					for (;;)
-						if (SampleFunction() == 2)
-							break;
-						else continue;
+			}
+		}
+		else if (option == 2) {
+			for (;;) {
+				if (SampleFunction() == 1)
+					break;
+			}
+		}
+		else continue;
 	}
 	return -1;
 }
@@ -115,20 +120,24 @@ int Select011() {
 int Select012() {
 	for (;;) {
 		system("cls");
-		printf("1,2,0\n");
+		printf("121,122,0\n");
 		int option;
 		cin >> option;
 		if (option == 0)
 			return 1;
-		else if (option == 1)
-			for (;;)
+		else if (option == 1) {
+			for (;;) {
 				if (SampleFunction() == 1)
 					break;
-				else if (option == 2)
-					for (;;)
-						if (SampleFunction() == 2)
-						break;
-						else continue;
+			}
+		}
+		else if (option == 2) {
+			for (;;) {
+				if (SampleFunction() == 1)
+					break;
+			}
+		}
+		else continue;
 	}
 	return -1;
 }
@@ -136,20 +145,24 @@ int Select012() {
 int Select021() {
 	for (;;) {
 		system("cls");
-		printf("1,2,0\n");
+		printf("211,212,0\n");
 		int option;
 		cin >> option;
 		if (option == 0)
 			return 1;
-		else if (option == 1)
-			for (;;)
+		else if (option == 1) {
+			for (;;) {
 				if (SampleFunction() == 1)
 					break;
-				else if (option == 2)
-					for (;;)
-						if (SampleFunction() == 2)
-						break;
-						else continue;
+			}
+		}
+		else if (option == 2) {
+			for (;;) {
+				if (SampleFunction() == 1)
+					break;
+			}
+		}
+		else continue;
 	}
 	return -1;
 }
@@ -162,15 +175,19 @@ int Select022() {
 		cin >> option;
 		if (option == 0)
 			return 1;
-		else if (option == 1)
-			for (;;)
+		else if (option == 1) {
+			for (;;) {
 				if (SampleFunction() == 1)
 					break;
-				else if (option == 2)
-					for (;;)
-						if (SampleFunction() == 1)
-						break;
-						else continue;
+			}
+		}
+		else if (option == 2) {
+			for (;;) {
+				if (SampleFunction() == 1)
+					break;
+			}
+		}
+		else continue;
 	}
 	return -1;
 }
@@ -192,7 +209,7 @@ int SampleFunction() {
 				result *= i;
 			cout << "Answer is " << result << endl;
 		}
-		cout << "Back/Reenter";
+		cout << "Back/Reenter\n";
 		for (;;) {
 			char option;
 			cin >> option;
