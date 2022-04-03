@@ -12,7 +12,7 @@ int main() {
 }
 
 void WelPag() {
-	cout << "ÈÎÒâ¼ü¼ÌÐø£¬QÍË³ö\n";
+	cout << "ä»»æ„é”®ç»§ç»­ï¼ŒQé€€å‡º\n";
 	if (getchar() == 'Q')
 		return;
 	PriSel();
@@ -21,7 +21,7 @@ void WelPag() {
 
 void PriSel() {
 	system("cls");
-	printf("1Í³¼ÆÑ§\t2·½³Ì\t3×ø±êÏµ\t0·µ»Ø\n");
+	printf("1ç»Ÿè®¡å­¦\t2æ–¹ç¨‹\t3åæ ‡ç³»\t0è¿”å›ž\n");
 	int option;
 	cin >> option;
 	if (option == 0)
@@ -37,7 +37,7 @@ void PriSel() {
 
 void StatSel() {
 	system("cls");
-	printf("1·½²î\t2Æ½¾ùÊý\t0·µ»Ø\n");
+	printf("1æ–¹å·®\t2å¹³å‡æ•°\t0è¿”å›ž\n");
 	int option;
 	cin >> option;
 	if (option == 0)
@@ -53,7 +53,7 @@ void StatSel() {
 
 void EquaSel() {
 	system("cls");
-	printf("1Ò»ÔªÒ»´Î\t2Ò»Ôª¶þ´Î\t0·µ»Ø\n");
+	printf("1ä¸€å…ƒä¸€æ¬¡\t2ä¸€å…ƒäºŒæ¬¡\t0è¿”å›ž\n");
 	int option;
 	cin >> option;
 	if (option == 0)
@@ -68,7 +68,7 @@ void EquaSel() {
 
 void Varc(){
 	system("cls");
-	cout << "·½²î\n1±¨´í\n";
+	cout << "æ–¹å·®\n1æŠ¥é”™\n";
 	int m;
 	cin >> m;
 	if (m == 1) Varc();
@@ -82,6 +82,7 @@ void Varc(){
 		else if (option == 'R')
 			Varc();
 		else continue;
+		break;
 	}
 	return;
 }
@@ -89,7 +90,7 @@ void Varc(){
 void Aver()
 {
 	system("cls");
-	cout << "Æ½¾ùÊý\n1±¨´í\n";
+	cout << "å¹³å‡æ•°\n1æŠ¥é”™\n";
 	int m;
 	cin >> m;
 	if (m == 1) Aver();
@@ -103,6 +104,7 @@ void Aver()
 		else if (option == 'R')
 			Aver();
 		else continue;
+		berak;
 	}
 	return;
 }
@@ -110,7 +112,7 @@ void Aver()
 void LiI1U()
 {
 	system("cls");
-	cout << "Ò»ÔªÒ»´Î\n1±¨´í\n";
+	cout << "ä¸€å…ƒä¸€æ¬¡\n1æŠ¥é”™\n";
 	int m;
 	cin >> m;
 	if (m == 1) LiI1U();
@@ -124,6 +126,7 @@ void LiI1U()
 		else if (option == 'R')
 			LiI1U();
 		else continue;
+		break;
 	}
 	return;
 }
@@ -131,7 +134,7 @@ void LiI1U()
 void LiI2U()
 {
 	system("cls");
-	cout << "Ò»Ôª¶þ´Î\n1±¨´í\n";
+	cout << "ä¸€å…ƒäºŒæ¬¡\n1æŠ¥é”™\n";
 	int m;
 	cin >> m;
 	if (m == 1) LiI2U();
@@ -145,6 +148,7 @@ void LiI2U()
 		else if (option == 'R')
 			LiI2U();
 		else continue;
+		break;
 	}
 	return;
 }
