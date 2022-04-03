@@ -9,6 +9,7 @@ void StatSel(), EquaSel(), AaCSel(), SeqcSel(), CoodSel(), SolTrSel();
 void LiI1U(), LiI2U(), QuI1U();
 void Varc(), Aver(), Medn(), StdD(), Mode();
 void Arrg(), Comb();
+void APS(), GPSn(), GPSna();
 
 void OutputSample() {
 	//居中点                      |
@@ -144,7 +145,7 @@ void LiI1U(){
 			return;
 		else if (option == 'R')
 			LiI1U();
-		else continue;
+		else continue; break;
 	}
 	return;
 }
@@ -172,7 +173,7 @@ void LiI2U() {
 			return;
 		else if (option == 'R')
 			LiI2U();
-		else continue;
+		else continue; break;
 	}
 	return;
 }
@@ -199,7 +200,7 @@ void QuI1U() {
 			return;
 		else if (option == 'R')
 			QuI1U();
-		else continue;
+		else continue; break;
 	}
 	return;
 }
@@ -239,7 +240,7 @@ void StatSel() {
 
 void Aver() {
 	system("cls");
-	int N, res, temp;
+	double N, res, temp;
 	res = 0;
 	cout << "               平均数计算器\n";
 	cout << "请输入样本容量：";
@@ -251,8 +252,9 @@ void Aver() {
 	}
 	res /= N;
 	cout << "平均数为" << res << "\n";
-	cout << "\n按Ｂ退回上一级\n按Ｒ重新输入数据\n";
+
 	for (;;) {
+		cout << "\n按Ｂ退回上一级\n按Ｒ重新输入数据\n";
 		char option;
 		cin >> option;
 		cout << "\n";
@@ -261,6 +263,7 @@ void Aver() {
 		else if (option == 'R')
 			Aver();
 		else continue;
+		break;
 	}
 	return;
 }
@@ -296,6 +299,7 @@ void Medn() {
 		else if (option == 'R')
 			Medn();
 		else continue;
+		break;
 	}
 	return;
 }
@@ -327,6 +331,7 @@ void Varc() {
 		else if (option == 'R')
 			Varc();
 		else continue;
+		break;
 	}
 	return;
 }
@@ -359,6 +364,7 @@ void StdD() {
 		else if (option == 'R')
 			StdD();
 		else continue;
+		break;
 	}
 	return;
 }
@@ -420,6 +426,7 @@ void Mode() {
 		else if (option == 'R')
 			Mode();
 		else continue;
+		break;
 	}
 	return;
 }
@@ -479,6 +486,7 @@ void Arrg() {
 		else if (option == 'R')
 			Arrg();
 		else continue;
+		break;
 	}
 	return;
 }
@@ -516,11 +524,132 @@ void Comb() {
 		else if (option == 'R')
 			Comb();
 		else continue;
+		break;
 	}
 	return;
 }
 
 void SeqcSel() {
+	system("cls");
+	//居中点                      |
+	cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n";
+	cout << "┃              CaculatorKit               ┃\n";
+	cout << "┃                                         ┃\n";
+	cout << "┃  输入１进入等差数列前n项和计算器        ┃\n";
+	cout << "┃  输入２进入等比数列第n项计算器   　 　  ┃\n";
+	cout << "┃  输入３进入等比数列前n项和计算器　　　　┃\n";
+	cout << "┃                                         ┃\n";
+	cout << "┃  输入０退回上一级                       ┃\n";
+	cout << "┃                                         ┃\n";
+	cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n";
+	int option;
+	cin >> option;
+	if (option == 0)
+		return;
+	else if (option == 1)
+		APS();
+	else if (option == 2)
+		GPSn();
+	else if (option == 3)
+		GPSna();
+	else SeqcSel();
+	SeqcSel();
+	return;
+}
+
+void APS() {
+	system("cls");
+	int a1, d, n, res;
+	cout << "          等差数列前n项和计算器\n";
+	cout << "请输入首项、公差、n的值：\n";
+	cin >> a1 >> d >> n;
+
+	res = n * a1 + d * (n - 1);
+	cout << "\n前n项和为" << res;
+
+	cout << "\n按Ｂ退回上一级\n按Ｒ重新输入数据\n";
+	for (;;) {
+		char option;
+		cin >> option;
+		cout << "\n";
+		if (option == 'B')
+			return;
+		else if (option == 'R')
+			APS();
+		else continue;
+		break;
+	}
+	return;
+}
+
+void GPSn() {
+	system("cls");
+	int a1, q, n;
+	cout << "          等比数列第n项计算器\n";
+	cout << "请输入首项、公比、n的值：\n";
+	cin >> a1 >> q >> n;
+
+	if (q != 0 && a1 != 0) {
+		int res = a1;
+		for (int i = 1; i <= n; i++)
+			res *= q;
+		cout << "\n第n项为" << res;
+	}
+	else {
+		cout << "数据无效，请重新输入！\n";
+		system("pause");
+		GPSn();
+	}
+
+	cout << "\n按Ｂ退回上一级\n按Ｒ重新输入数据\n";
+	for (;;) {
+		char option;
+		cin >> option;
+		cout << "\n";
+		if (option == 'B')
+			return;
+		else if (option == 'R')
+			GPSn();
+		else continue;
+		break;
+	}
+	return;
+}
+
+void GPSna() {
+	system("cls");
+	double a1, q;
+	int n;
+	cout << "          等比数列前n项和计算器\n";
+	cout << "请输入首项、公比、n的值：\n";
+	cin >> a1 >> q >> n;
+
+	if (a1 != 0 && q != 0) {
+		double res, qn = 1;
+		for (int i = 1; i <= n; i++)
+			qn *= q;
+		res = a1 * (1 - qn) / (1 - q);
+		cout << "前n项和为" << res;
+	}
+	else {
+		cout << "数据无效，请重新输入！\n";
+		system("pause");
+		GPSna();
+	}
+
+	cout << "\n按Ｂ退回上一级\n按Ｒ重新输入数据\n";
+	for (;;) {
+		char option;
+		cin >> option;
+		cout << "\n";
+		if (option == 'B')
+			return;
+		else if (option == 'R')
+			GPSna();
+		else continue;
+		break;
+	}
+	return;
 }
 
 void CoodSel() {
