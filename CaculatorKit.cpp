@@ -5,43 +5,14 @@
 using namespace std;
 
 void WelcPag(), PrimSel();
-void StatSel(), EquaSel(), AaCSel(), SeqcSel(), CoodSel(), SolTrSel();
+void StatSel(), EquaSel(), AaCSel(), SeqcSel(), CoodSel();
 void LiI1U(), LiI2U(), QuI1U();
 void Varc(), Aver(), Medn(), StdD(), Mode();
 void Arrg(), Comb();
 void APS(), GPSn(), GPSna();
-
-void OutputSample() {
-	//居中点                      |
-	cout <<"┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n";
-	cout <<"┃              CaculatorKit               ┃\n";
-	cout <<"┃                                         ┃\n";
-	cout <<"┃                                         ┃\n";
-	cout <<"┃                                         ┃\n";
-	cout <<"┃                                         ┃\n";
-	cout <<"┃                                         ┃\n";
-	cout <<"┃                                         ┃\n";
-	cout <<"┃                                         ┃\n";
-	cout <<"┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n";
-	int option;
-	cin >> option;
-	if (option == 0)
-		return;
-	else if (option == 1)
-		OutputSample();
-	else if (option == 2)
-		OutputSample();
-	else if (option == 3)
-		OutputSample();
-	else if (option == 4)
-		OutputSample();
-	else if (option == 5)
-		OutputSample();
-	else if (option == 6)
-		OutputSample();
-	else OutputSample();
-	OutputSample();
-}
+void PlnCSel(), TriCSel();
+void PtPtDist(), PtLnDist(), LnLnDist(), STrig(), LnPrIP();
+void CosDihd(), SinLnAg(), PtPlDist();
 
 int main() {
 	WelcPag();
@@ -77,7 +48,7 @@ void PrimSel() {
 	cout << "┃  输入３进入排列组合计算器               ┃\n";
 	cout << "┃  输入４进入数列计算器                   ┃\n";
 	cout << "┃  输入５进入坐标系计算器                 ┃\n";
-	cout << "┃  输入６进入解三角形计算器               ┃\n";
+	cout << "┃                                         ┃\n";
 	cout << "┃  输入０退出程序                         ┃\n";
 	cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n";
 	int option;
@@ -94,11 +65,10 @@ void PrimSel() {
 		SeqcSel();
 	else if (option == 5)
 		CoodSel();
-	else if (option == 6)
-		SolTrSel();
 	else PrimSel();
 	PrimSel();
 }
+
 
 void EquaSel() {
 	system("cls");
@@ -205,6 +175,7 @@ void QuI1U() {
 	return;
 }
 
+
 void StatSel() {
 	system("cls");
 	system("cls");
@@ -307,7 +278,7 @@ void Medn() {
 void Varc() {
 	system("cls");
 	int amt = 1;
-	double num[500], total = 0, avg = 0, result = 0;
+	double num[500]{}, total = 0, avg = 0, result = 0;
 	num[0] = 0;
 	cout << "         方差计算器"; 
 	cout << "请输入样本容量：";
@@ -339,7 +310,7 @@ void Varc() {
 void StdD() {
 	system("cls");
 	int amt = 1;
-	double num[500], total = 0, avg = 0, result = 0;
+	double num[500]{}, total = 0, avg = 0, result = 0;
 	num[0] = 0;
 	cout << "         标准差计算器";
 	cout << "请输入样本容量：";
@@ -430,6 +401,7 @@ void Mode() {
 	}
 	return;
 }
+
 
 void AaCSel() {
 	system("cls");
@@ -528,6 +500,7 @@ void Comb() {
 	}
 	return;
 }
+
 
 void SeqcSel() {
 	system("cls");
@@ -652,8 +625,300 @@ void GPSna() {
 	return;
 }
 
+
 void CoodSel() {
+	system("cls");
+	//居中点                      |
+	cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n";
+	cout << "┃              CaculatorKit               ┃\n";
+	cout << "┃                                         ┃\n";
+	cout << "┃                                         ┃\n";
+	cout << "┃  输入１进入平面坐标系计算器             ┃\n";
+	cout << "┃  输入２进入立体坐标系计算器             ┃\n";
+	cout << "┃                                         ┃\n";
+	cout << "┃  输入０退回上一级                       ┃\n";
+	cout << "┃                                         ┃\n";
+	cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n";
+	int option;
+	cin >> option;
+	if (option == 0)
+		return;
+	else if (option == 1)
+		PlnCSel();
+	else if (option == 2)
+		TriCSel();
+	else CoodSel();
+	CoodSel();
+	return;
 }
 
-void SolTrSel() {
+
+void PlnCSel() {
+	system("cls");
+	//居中点                      |
+	cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n";
+	cout << "┃              CaculatorKit               ┃\n";
+	cout << "┃  输入１进入点点距计算器                 ┃\n";
+	cout << "┃  输入２进入点线距计算器                 ┃\n";
+	cout << "┃  输入３进入线线距计算器                 ┃\n";
+	cout << "┃  输入４进入三角形面积计算器             ┃\n";
+	cout << "┃  输入５进入直线抛物线交点计算器         ┃\n";
+	cout << "┃                                         ┃\n";
+	cout << "┃  输入０返回上一级                       ┃\n";
+	cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n";
+	int option;
+	cin >> option;
+	if (option == 0)
+		return;
+	else if (option == 1)
+		PtPtDist();
+	else if (option == 2)
+		PtLnDist();
+	else if (option == 3)
+		LnLnDist();
+	else if (option == 4)
+		STrig();
+	else if (option == 5)
+		LnPrIP();
+	else PrimSel();
+	PlnCSel();
+}
+
+void PtPtDist() {
+	system("cls");
+	double x1, y1, x2, y2, res;
+	cout << "          点点距计算器\n";
+	cout << "请输入X1、y1、x2、y2的值：\n";
+	cin >> x1 >> y1 >> x2 >> y2;
+	res = sqrt((x2 - x1) * (x2 - x1) + (y1 - y2) * (y1 - y2));
+	cout << "\n点点距为" << res;
+
+	cout << "\n按Ｂ退回上一级\n按Ｒ重新输入数据\n";
+	for (;;) {
+		char option;
+		cin >> option;
+		cout << "\n";
+		if (option == 'B')
+			return;
+		else if (option == 'R')
+			PtPtDist();
+		else continue;
+		break;
+	}
+	return;
+}
+
+void PtLnDist() {
+	system("cls");
+	double x, y, a, b, res;
+	cout << "          点线距计算器\n";
+	cout << "请输入A(x,y)、l:y=ax+b中x、y、a、b的值：\n";
+	cin >> x >> y >> a >> b;
+	res = fabs((a * x - y + b)/sqrt(a * a + 1));
+	cout << "\n点线距为" << res;
+
+	cout << "\n按Ｂ退回上一级\n按Ｒ重新输入数据\n";
+	for (;;) {
+		char option;
+		cin >> option;
+		cout << "\n";
+		if (option == 'B')
+			return;
+		else if (option == 'R')
+			PtLnDist();
+		else continue;
+		break;
+	}
+	return;
+}
+
+void LnLnDist() {
+	system("cls");
+	double a1, b1, a2, b2, res;
+	cout << "          线线距计算器\n";
+	cout << "请输入l1:y=a1x+b1、l2:y=a2x+b2中a1、b1、a2、b2的值：\n";
+	cin >> a1 >> b1 >> a2 >> b2;
+	res = fabs((-b1 + b2) / sqrt(a2 * a2 + 1));
+	cout << "\n线线距为" << res;
+
+	cout << "\n按Ｂ退回上一级\n按Ｒ重新输入数据\n";
+	for (;;) {
+		char option;
+		cin >> option;
+		cout << "\n";
+		if (option == 'B')
+			return;
+		else if (option == 'R')
+			LnLnDist();
+		else continue;
+		break;
+	}
+	return;
+}
+
+void STrig(){
+	system("cls");
+	cout << "                         三角形面积计算器\n";
+	cout << "请输入A（x1,y1）、B(x2,y2)、C(x3,y3)中x1、y1、x2、y2、x3、y3的值（用空格隔开）：\n";
+	double x1, y1, x2, y2, x3, y3, S, AB, BC, CA, p;
+	cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
+	AB = sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+	BC = sqrt((x2 - x3) * (x2 - x3) + (y2 - y3) * (y2 - y3));
+	CA = sqrt((x3 - x1) * (x3 - x1) + (y3 - y1) * (y3 - y1));
+	p = (AB + BC + CA) / 2;
+	S = sqrt(p * (p - AB) * (p - BC) * (p - CA));
+	cout << "面积为" << S << "\n";
+
+	cout << "\n按Ｂ退回上一级\n按Ｒ重新输入数据\n";
+	for (;;) {
+		char option;
+		cin >> option;
+		cout << "\n";
+		if (option == 'B')
+			return;
+		else if (option == 'R')
+			STrig();
+		else continue;
+		break;
+	}
+	return;
+}
+
+void LnPrIP() {
+	system("cls");
+	cout << "            直线抛物线交点计算器\n";
+	cout << "请输入y=kx+d与y=ax^2+bx+c中的k、d、a、b、c的值：\n";
+	double k, d, a, b, c, x1, x2, y1, y2, delta;
+	cin >> k >> d >> a >> b >> c;
+	a /= k; b /= k; c = (c - d) / k;
+	delta = b * b - 4 * a * c;
+	if (delta < 0) cout << "无交点\n";
+	else if (delta > 0) {
+		x1 = (-b + sqrt(delta)) / (2 * a);
+		x2 = (-b + sqrt(delta)) / (2 * a);
+		y1 = k * x1 + d;
+		y2 = k * x2 + d;
+		cout << "交点为(" << x1 << "," << y1 << ")和(" << x2 << "," << y2 << ")\n";
+	}
+	else if (delta == 0) {
+		x1 = -b / (2 * a);
+		y1 = k * x1 + d;
+		cout << "交点为(" << x1 << "," << y1 << ")\n";
+	}
+
+	cout << "\n按Ｂ退回上一级\n按Ｒ重新输入数据\n";
+	for (;;) {
+		char option;
+		cin >> option;
+		cout << "\n";
+		if (option == 'B')
+			return;
+		else if (option == 'R')
+			LnPrIP();
+		else continue;
+		break;
+	}
+	return;
+}
+
+
+void TriCSel() {
+	system("cls");
+	//居中点                      |
+	cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n";
+	cout << "┃              CaculatorKit               ┃\n";
+	cout << "┃                                         ┃\n";
+	cout << "┃  输入１进入二面角余弦值计算器           ┃\n";
+	cout << "┃  输入２进入线面角正弦值计算器           ┃\n";
+	cout << "┃  输入３进入点线距计算器                 ┃\n";
+	cout << "┃                                         ┃\n";
+	cout << "┃  输入０返回上一级                       ┃\n";
+	cout << "┃                                         ┃\n";
+	cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n";
+	int option;
+	cin >> option;
+	if (option == 0)
+		return;
+	else if (option == 1)
+		CosDihd();
+	else if (option == 2)
+		SinLnAg();
+	else if (option == 3)
+		PtPlDist();
+	else TriCSel();
+	TriCSel();
+}
+
+void CosDihd() {
+	system("cls");
+	cout << "                         二面角余弦值计算器\n";
+	cout << "请输入法向量n1=(x1,y1,z1)、n2=(x2,y2,z2)中x1、y1、z1、x2、y2、z2的值（用空格隔开）：\n";
+	double x1, y1, z1, x2, y2, z2, cos;
+	cin >> x1 >> y1 >>z1 >> x2 >> y2 >> z2;
+	cos = fabs((x1 * x2 + y1 * y2 + z1 * z2) / (sqrt(x1 * x1 + y1 * y1 + z1 * z1) * sqrt(x2 * x2 + y2 * y2 + z2 * z2)));
+	cout << "余弦值为" << cos << "\n";
+
+	cout << "\n按Ｂ退回上一级\n按Ｒ重新输入数据\n";
+	for (;;) {
+		char option;
+		cin >> option;
+		cout << "\n";
+		if (option == 'B')
+			return;
+		else if (option == 'R')
+			CosDihd();
+		else continue;
+		break;
+	}
+	return;
+}
+
+void SinLnAg() {
+	system("cls");
+	cout << "                         线面角正弦值计算器\n";
+	cout << "请输入法向量n1=(x1,y1,z1)、方向n2=(x2,y2,z2)中x1、y1、z1、x2、y2、z2的值（用空格隔开）：\n";
+	double x1, y1, z1, x2, y2, z2, cos;
+	cin >> x1 >> y1 >> z1 >> x2 >> y2 >> z2;
+	cos = fabs((x1 * x2 + y1 * y2 + z1 * z2) / (sqrt(x1 * x1 + y1 * y1 + z1 * z1) * sqrt(x2 * x2 + y2 * y2 + z2 * z2)));
+	cout << "正弦值为" << cos << "\n";
+
+	cout << "\n按Ｂ退回上一级\n按Ｒ重新输入数据\n";
+	for (;;) {
+		char option;
+		cin >> option;
+		cout << "\n";
+		if (option == 'B')
+			return;
+		else if (option == 'R')
+			SinLnAg();
+		else continue;
+		break;
+	}
+	return;
+}
+
+void PtPlDist() {
+	system("cls");
+	double x1, y1, z1, x2, y2, z2, x3, y3, z3, res;
+	cout << "             点面距计算器\n";
+	cout << "请输入点(x1,y1,z1)和面上一点A(x2,y2,z2)法向量(x3,y3,z3)中\n"
+	<< "x、y、z、x1、y1、z1、x2、y2、z2、x3、y3、z3的值：\n";
+	cin >> x1 >> y1 >> z1 >> x2 >> y2 >> z2 >> x3 >> y3 >> z3;
+	double dx = x2 - x1, dy = y2 - y1, dz = z2 - z1;
+	res = (dx * x3 + dy * y3 + dz * z3) / sqrt(x3 * x3 + y3 * y3);
+	cout << "\n点面距为" << res;
+
+	cout << "\n\n按Ｂ退回上一级\n按Ｒ重新输入数据\n";
+	for (;;) {
+		char option;
+		cin >> option;
+		cout << "\n";
+		if (option == 'B')
+			return;
+		else if (option == 'R')
+			PtPlDist();
+		else continue;
+		break;
+	}
+	return;
 }
